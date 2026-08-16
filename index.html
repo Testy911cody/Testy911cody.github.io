@@ -3,160 +3,215 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Roman — shipped web products</title>
-  <meta name="description" content="Live web products on housegames.club: Talk Board AAC, House Games arcade, GoFleet booking, PityParty, Mychillplace. TypeScript, Next.js, Supabase, Cloudflare Pages." />
-  <meta name="color-scheme" content="dark" />
+  <title>Labi Roman — full-stack product builder</title>
+  <meta name="description" content="Labi Roman: full-stack product builder. Live work on housegames.club — Talk Board AAC, House Games, GoFleet booking UI, PityParty, Mychillplace." />
+  <meta name="color-scheme" content="light" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <a class="skip" href="#products">Skip to products</a>
+  <a class="skip" href="#work">Skip to work</a>
 
-  <header class="wrap">
-    <p class="kicker">Labi Roman · Testy911cody</p>
-    <h1>Live products on housegames.club</h1>
-    <p class="lede">
-      I ship web products on <a href="https://housegames.club">housegames.club</a> — one Next.js site that hosts
-      multiplayer party games <em>and</em> embedded standalone apps: AAC for nonspeaking kids, ride booking,
-      voice rooms, retro social profiles. Every link below is a real URL, not a screenshot or a mockup.
-    </p>
-    <p class="lede muted-note">
-      The House Games repo is private, so I link the running product rather than a clone command.
-      Talk Board&rsquo;s source is the only public product repo among these:
-      <a href="https://github.com/Testy911cody/amoory-app">amoory-app</a>.
-    </p>
-    <p>
-      <a class="btn" href="https://housegames.club/amoory/">Open Talk Board</a>
-      <a class="btn ghost" href="https://housegames.club">House Games hub</a>
-      <a class="btn ghost" href="https://github.com/Testy911cody">GitHub profile</a>
-    </p>
+  <div class="atmosphere" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Primary">
+      <a href="https://www.linkedin.com/in/labi-roman">LinkedIn</a>
+      <a href="https://github.com/Testy911cody">GitHub</a>
+      <a href="https://housegames.club">housegames.club</a>
+    </nav>
   </header>
 
+  <section class="hero wrap">
+    <p class="name">Labi Roman</p>
+    <p class="role-line">Full-stack product builder</p>
+    <p class="lede">
+      I design and ship web products from the United States and put them online —
+      TypeScript and JavaScript on a Next.js site hosted on Cloudflare, with a public AAC PWA
+      and a booking UI you can open today.
+    </p>
+    <div class="cta">
+      <a class="btn" href="https://housegames.club/amoory/">Open Talk Board</a>
+      <a class="btn ghost" href="https://housegames.club">House Games</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/labi-roman">LinkedIn</a>
+    </div>
+  </section>
+
   <main class="wrap">
-    <section id="products">
-      <h2>Open these</h2>
-      <ul class="cards">
-        <li>
-          <h3>Talk Board</h3>
-          <p class="role">AAC for nonspeaking children · public source</p>
-          <p>
-            Tap a picture, hear the word. When no computer voice exists for a dialect — Sudanese and Juba Arabic,
-            for example — caregivers record a real human voice instead. Long-press opens the caregiver settings path
-            so a child cannot wander out of the board.
-          </p>
-          <p class="stack">Vanilla ES-module PWA · Supabase (accounts, community words, audio) · Capacitor 8 wrappers</p>
-          <p class="links">
-            <a href="https://housegames.club/amoory/">/amoory/</a> ·
-            <a href="https://github.com/Testy911cody/amoory-app">public source</a>
-          </p>
+    <section id="work" class="work">
+      <h2>Selected work</h2>
+      <p class="section-lede">
+        Live URLs below. The House Games repo is private; Talk Board is the public product source
+        (<a href="https://github.com/Testy911cody/amoory-app">amoory-app</a>).
+      </p>
+
+      <ol class="work-list">
+        <li class="work-item">
+          <div class="work-meta">
+            <span class="work-index" aria-hidden="true">01</span>
+            <h3>Talk Board</h3>
+            <p class="work-tag">AAC PWA · live + public source</p>
+          </div>
+          <div class="work-body">
+            <p>
+              Picture-and-voice AAC: tap cards, speak via TTS or recorded audio. Caregivers can
+              record dialect voices — including Sudanese and Juba Arabic when computer TTS is missing.
+              Vanilla ES-module PWA; same Supabase project as House Games. Capacitor wrappers exist
+              for packaging; not listed on app stores.
+            </p>
+            <p class="work-links">
+              <a href="https://housegames.club/amoory/">housegames.club/amoory/</a>
+              <span class="sep" aria-hidden="true">·</span>
+              <a href="https://github.com/Testy911cody/amoory-app">Source</a>
+            </p>
+          </div>
         </li>
 
-        <li>
-          <h3>House Games</h3>
-          <p class="role">Flagship · party games + apps hub</p>
-          <p>
-            Neon arcade with rooms and guest play — no account needed to join. Jeopardy, Taboo, Codenames,
-            DrawGuess, Ludo, Werewolf and more under <code>/games</code>; standalone tools under <code>/apps</code>.
-          </p>
-          <p class="stack">Next.js 16 (App Router, static export) · React 18 · TypeScript · Tailwind · Supabase · Cloudflare Pages</p>
-          <p class="links"><a href="https://housegames.club">housegames.club</a></p>
+        <li class="work-item">
+          <div class="work-meta">
+            <span class="work-index" aria-hidden="true">02</span>
+            <h3>House Games</h3>
+            <p class="work-tag">Live site · private repo</p>
+          </div>
+          <div class="work-body">
+            <p>
+              Next.js PWA that hosts party games and embedded web apps on one domain (Cloudflare Pages).
+              Guest play without an account for arcade rooms; production deploys are opt-in, not every
+              git push. Stack in repo: React, TypeScript, Tailwind, Supabase. The live URL is the
+              public artifact.
+            </p>
+            <p class="work-links">
+              <a href="https://housegames.club">housegames.club</a>
+            </p>
+          </div>
         </li>
 
-        <li>
-          <h3>GoFleet</h3>
-          <p class="role">Ride booking UI + API</p>
-          <p>
-            Taxi / limo / truck booking with fare estimates. The booking UI is an Expo web export on the same
-            domain; a Hono API on Cloudflare Pages Functions serves health and booking routes. Live demo is the
-            book page and API health — not a full marketplace with live GPS tracking or payments.
-          </p>
-          <p class="stack">Expo 52 · React Native 0.76 · React Native Web · Hono on Cloudflare Pages Functions</p>
-          <p class="links">
-            <a href="https://housegames.club/gofleet/book">/gofleet/book</a> ·
-            <a href="https://housegames.club/api/gofleet/health">API health</a>
-          </p>
+        <li class="work-item">
+          <div class="work-meta">
+            <span class="work-index" aria-hidden="true">03</span>
+            <h3>GoFleet</h3>
+            <p class="work-tag">Booking UI + API health</p>
+          </div>
+          <div class="work-body">
+            <p>
+              Expo / React Native Web booking UI and a same-origin API (Cloudflare Pages Functions / Hono).
+              Health endpoint returns ok on Cloudflare. Local codebase also includes Express dispatch
+              modules with a JSON file store. Not a live US fleet operation, native store app, payments
+              product, or GPS tracker.
+            </p>
+            <p class="work-links">
+              <a href="https://housegames.club/gofleet/book/">/gofleet/book/</a>
+              <span class="sep" aria-hidden="true">·</span>
+              <a href="https://housegames.club/api/gofleet/health">API health</a>
+            </p>
+          </div>
         </li>
 
-        <li>
-          <h3>PityParty</h3>
-          <p class="role">Supportive voice rooms</p>
-          <p>
-            &ldquo;Campfires&rdquo; you join from a shared link — no signup, no profile to build first. Designed so the
-            slowest step between feeling bad and talking to someone is opening a link.
-          </p>
-          <p class="stack">Expo 52 · Expo Router · web export into House Games · real-time voice on the web</p>
-          <p class="links"><a href="https://housegames.club/pityparty/">/pityparty/</a></p>
+        <li class="work-item">
+          <div class="work-meta">
+            <span class="work-index" aria-hidden="true">04</span>
+            <h3>PityParty</h3>
+            <p class="work-tag">Voice rooms · live</p>
+          </div>
+          <div class="work-body">
+            <p>
+              Supportive voice rooms you join from a shared link — no account required.
+              Web export into House Games; real-time voice on the web.
+            </p>
+            <p class="work-links">
+              <a href="https://housegames.club/pityparty/">/pityparty/</a>
+            </p>
+          </div>
         </li>
 
-        <li>
-          <h3>Mychillplace</h3>
-          <p class="role">Retro social portal</p>
-          <p>
-            Profiles, top friends, bulletins, and a profile song — the early-2000s social web, rebuilt on a
-            modern stack and shipped inside House Games.
-          </p>
-          <p class="stack">Vite · React 18 · React Router · Supabase</p>
-          <p class="links"><a href="https://housegames.club/mychillplace/">/mychillplace/</a></p>
+        <li class="work-item">
+          <div class="work-meta">
+            <span class="work-index" aria-hidden="true">05</span>
+            <h3>Mychillplace</h3>
+            <p class="work-tag">Retro social · live SPA</p>
+          </div>
+          <div class="work-body">
+            <p>
+              Profiles, top friends, bulletins, and a profile song — a Vite / React SPA shipped
+              inside House Games.
+            </p>
+            <p class="work-links">
+              <a href="https://housegames.club/mychillplace/">/mychillplace/</a>
+            </p>
+          </div>
         </li>
-      </ul>
-      <p class="muted-note" style="margin-top: 1rem;">
-        Full apps catalog (including smaller demos): <a href="https://housegames.club/apps">housegames.club/apps</a>.
+      </ol>
+
+      <p class="catalog-note">
+        Full apps catalog (including smaller demos):
+        <a href="https://housegames.club/apps/">housegames.club/apps</a>
       </p>
     </section>
 
-    <section>
-      <h2>How this is actually built</h2>
-      <div class="notes">
-        <p>
-          <strong>One domain, two kinds of app.</strong> <code>/games</code> is the multiplayer arcade rendered by
-          Next.js. <code>/apps</code> is a catalog of standalone tools — several of them are separate codebases
-          exported to static files and served from the same origin. That keeps one domain and one deploy.
-        </p>
-        <p>
-          <strong>Deploys are opt-in.</strong> GitHub Actions runs QA on pushes, but the production Cloudflare
-          upload only fires on an explicit <code>[deploy]</code> marker or a manual workflow dispatch. Cheap
-          feedback on every commit; releases stay deliberate.
-        </p>
-        <p>
-          <strong>Guest-first.</strong> House Games rooms and PityParty campfires both work without an account.
-          Sign-in adds persistence; it is not a gate at the front door.
-        </p>
-        <p>
-          <strong>Accessibility that fits the user.</strong> Talk Board exists because commercial AAC has no voice
-          for Sudanese and Juba Arabic. Community-recorded audio fills the gap that TTS cannot.
-        </p>
-      </div>
-    </section>
-
-    <section>
-      <h2>Stack I use for real</h2>
-      <ul class="tags">
-        <li>TypeScript</li>
-        <li>React</li>
-        <li>Next.js</li>
-        <li>Expo / React Native Web</li>
-        <li>Tailwind CSS</li>
-        <li>Supabase</li>
-        <li>Cloudflare Pages</li>
-        <li>Pages Functions / Hono</li>
-        <li>Node + Express</li>
-        <li>PWA / service workers</li>
-        <li>GitHub Actions</li>
+    <section class="approach">
+      <h2>How it is built</h2>
+      <ul class="approach-list">
+        <li>
+          <strong>One domain, two kinds of app.</strong>
+          <code>/games</code> is the Next.js arcade;
+          <code>/apps</code> are separate codebases exported to static files on the same origin.
+        </li>
+        <li>
+          <strong>Opt-in production deploys.</strong>
+          CI runs QA on pushes; Cloudflare upload only on an explicit marker or manual dispatch.
+        </li>
+        <li>
+          <strong>Guest-first where it fits.</strong>
+          Arcade rooms and PityParty work without an account; sign-in adds persistence.
+        </li>
+        <li>
+          <strong>Accessibility that fits the user.</strong>
+          Talk Board exists because commercial AAC has no voice for Sudanese and Juba Arabic;
+          community-recorded audio fills the gap TTS cannot.
+        </li>
       </ul>
-      <p class="muted-note">I do not list private repositories as &ldquo;open source.&rdquo; Where the source is public, the link is above.</p>
     </section>
 
-    <section>
+    <section class="stack">
+      <h2>Stack</h2>
+      <p class="stack-line">
+        TypeScript · React · Next.js · Expo / React Native Web · Tailwind CSS · Supabase ·
+        Cloudflare Pages · Pages Functions / Hono · Node + Express · PWA · GitHub Actions
+      </p>
+      <p class="honest">
+        Private repositories are not listed as open source. Where source is public, the link is above.
+      </p>
+    </section>
+
+    <section class="contact" id="contact">
       <h2>Contact</h2>
-      <p>
-        LinkedIn: <a href="https://www.linkedin.com/in/labi-roman">labi-roman</a> ·
-        GitHub: <a href="https://github.com/Testy911cody">Testy911cody</a> ·
-        Public source: <a href="https://github.com/Testy911cody/amoory-app">amoory-app</a> (Talk Board)
-      </p>
+      <ul class="contact-list">
+        <li>
+          <span class="label">LinkedIn</span>
+          <a href="https://www.linkedin.com/in/labi-roman">linkedin.com/in/labi-roman</a>
+        </li>
+        <li>
+          <span class="label">GitHub</span>
+          <a href="https://github.com/Testy911cody">github.com/Testy911cody</a>
+          <span class="hint">(planned rename: labi-roman)</span>
+        </li>
+        <li>
+          <span class="label">Live products</span>
+          <a href="https://housegames.club">housegames.club</a>
+        </li>
+        <li>
+          <span class="label">Public source</span>
+          <a href="https://github.com/Testy911cody/amoory-app">amoory-app</a>
+          <span class="hint">(Talk Board)</span>
+        </li>
+      </ul>
     </section>
   </main>
 
-  <footer class="wrap">
-    <p>Static page — no build step, no tracking, no analytics.</p>
+  <footer class="site-footer wrap">
+    <p>Static portfolio — no build step, no tracking.</p>
   </footer>
 </body>
 </html>
