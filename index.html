@@ -1,478 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Roman's Portfolio</title>
-
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-        rel="stylesheet"
-    />
-
-    <style>
-        :root {
-            --bg: #020617;
-            --bg-soft: #020617;
-            --card-bg: #020617;
-            --card-border: rgba(148, 163, 184, 0.35);
-            --accent: #6366f1;
-            --accent-soft: rgba(129, 140, 248, 0.2);
-            --text-main: #e5e7eb;
-            --text-muted: #9ca3af;
-            --tag-bg: #111827;
-            --tag-border: #1f2937;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-            background: radial-gradient(circle at top left, #1d4ed8 0, transparent 55%),
-                        radial-gradient(circle at bottom right, #7c3aed 0, transparent 55%),
-                        var(--bg);
-            color: var(--text-main);
-            padding: 20px;
-            min-height: 100vh;
-        }
-
-        .page {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding: 24px 16px 10px;
-        }
-
-        header h1 {
-            font-size: 2.4rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        header h2 {
-            font-size: 1.1rem;
-            font-weight: 400;
-            color: var(--text-muted);
-            margin-bottom: 6px;
-        }
-
-        .tagline {
-            font-size: 0.95rem;
-            color: #c7d2fe;
-        }
-
-        .sections {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .section-card {
-            background: linear-gradient(145deg, rgba(15, 23, 42, 0.96), rgba(17, 24, 39, 0.98));
-            border-radius: 18px;
-            padding: 24px;
-            border: 1px solid var(--card-border);
-            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.75);
-        }
-
-        .section-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .section-title span.icon {
-            font-size: 1.2rem;
-        }
-
-        .section-subtitle {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 16px;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 18px;
-        }
-
-        .project-card {
-            background: radial-gradient(circle at top, rgba(37, 99, 235, 0.22), transparent 55%),
-                        var(--card-bg);
-            border-radius: 16px;
-            padding: 20px;
-            border: 1px solid rgba(75, 85, 99, 0.9);
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 48px rgba(37, 99, 235, 0.6);
-            border-color: rgba(129, 140, 248, 0.9);
-        }
-
-        .project-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-main);
-        }
-
-        .project-desc {
-            font-size: 0.9rem;
-            color: #d1d5db;
-            line-height: 1.5;
-        }
-
-        .project-features {
-            list-style: none;
-            padding: 0;
-            margin: 8px 0;
-        }
-
-        .project-features li {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 6px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .project-features li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
-
-        .project-link {
-            display: inline-block;
-            margin-top: 8px;
-            padding: 8px 16px;
-            background: var(--accent-soft);
-            border: 1px solid var(--accent);
-            border-radius: 8px;
-            color: var(--accent);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: all 0.2s ease;
-        }
-
-        .project-link:hover {
-            background: var(--accent);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 8px;
-        }
-
-        .tag {
-            padding: 4px 12px;
-            background: var(--tag-bg);
-            border: 1px solid var(--tag-border);
-            border-radius: 12px;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-
-        .contact-section {
-            margin-top: 40px;
-        }
-
-        .contact-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            margin-top: 16px;
-        }
-
-        .contact-link {
-            color: var(--accent);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s ease;
-        }
-
-        .contact-link:hover {
-            color: #818cf8;
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Roman — shipped web products</title>
+  <meta name="description" content="Six live web products on housegames.club: party games, AAC for nonspeaking kids, ride booking, voice rooms. Next.js, TypeScript, Supabase, Cloudflare Pages." />
+  <meta name="color-scheme" content="dark" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="page">
-        <header>
-            <h1>Roman's Portfolio</h1>
-            <h2>Software Developer & Creator</h2>
-            <p class="tagline">Showcasing projects across software development, automation, web, mobile, and trading | Built with Agentic Coding</p>
-        </header>
+  <a class="skip" href="#products">Skip to products</a>
 
-        <div class="sections">
-            <div class="section-card">
-                <div class="section-title">
-                    <span class="icon">🚀</span>
-                    Featured Projects
-                </div>
-                <div class="section-subtitle">Major projects I've built across different domains using modern technologies and agentic coding</div>
-                
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-title">Autonomous Affiliate Marketing Agent</div>
-                        <div class="project-desc">
-                            Production-ready AI-powered automation platform for affiliate marketing. Manages product research, AI content generation, video creation, and multi-platform social media distribution.
-                        </div>
-                        <ul class="project-features">
-                            <li>AI-powered content generation & scheduling</li>
-                            <li>Multi-platform publishing (Facebook, Instagram, YouTube, TikTok)</li>
-                            <li>Video automation with Sora/VEO APIs</li>
-                            <li>Secure OAuth integration & performance tracking</li>
-                        </ul>
-                        <div class="tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Flask</span>
-                            <span class="tag">AI/ML</span>
-                            <span class="tag">OAuth</span>
-                            <span class="tag">Selenium</span>
-                            <span class="tag">SQLite</span>
-                        </div>
-                    </div>
+  <header class="wrap">
+    <p class="kicker">Testy911cody · live work</p>
+    <h1>Six products you can open right now</h1>
+    <p class="lede">
+      I build and ship web apps on <a href="https://housegames.club">housegames.club</a> — a Next.js site that
+      hosts multiplayer party games <em>and</em> embedded standalone apps on one domain. Every link below is a
+      real URL, not a screenshot or a mockup.
+    </p>
+    <p class="lede muted-note">
+      The main House Games repo is private, so I link the running product instead of a clone command.
+      Talk Board&rsquo;s source is public.
+    </p>
+    <p>
+      <a class="btn" href="https://housegames.club">Open House Games</a>
+      <a class="btn ghost" href="https://github.com/Testy911cody">GitHub profile</a>
+    </p>
+  </header>
 
-                    <div class="project-card">
-                        <div class="project-title">HouseGames - Social Games Platform</div>
-                        <div class="project-desc">
-                            A cozy treehouse-themed web platform where friends play social games together. Features 10+ games including Jeopardy, Taboo, Codenames, DrawGuess, and more.
-                        </div>
-                        <ul class="project-features">
-                            <li>10+ multiplayer games (Jeopardy, Taboo, Codenames, etc.)</li>
-                            <li>Anonymous play & profile system</li>
-                            <li>Beautiful treehouse-themed UI</li>
-                            <li>Local storage persistence</li>
-                        </ul>
-                        <div class="tags">
-                            <span class="tag">Next.js 14</span>
-                            <span class="tag">React 18</span>
-                            <span class="tag">TypeScript</span>
-                            <span class="tag">Tailwind CSS</span>
-                            <span class="tag">App Router</span>
-                        </div>
-                    </div>
+  <main class="wrap">
+    <section id="products">
+      <h2>Live products</h2>
+      <ul class="cards">
+        <li>
+          <h3>House Games</h3>
+          <p class="role">Flagship · party games + apps hub</p>
+          <p>
+            Neon arcade with rooms and guest play — no account needed to join. Jeopardy, Taboo, Codenames,
+            DrawGuess, Ludo, Werewolf and more under <code>/games</code>; standalone tools under <code>/apps</code>.
+          </p>
+          <p class="stack">Next.js 16 (App Router, static export) · React 18 · TypeScript · Tailwind · Supabase · Cloudflare Pages</p>
+          <p class="links"><a href="https://housegames.club">housegames.club</a></p>
+        </li>
 
-                    <div class="project-card">
-                        <div class="project-title">Options Trading Bot</div>
-                        <div class="project-desc">
-                            Web-based paper trading bot with AI-powered predictions. Scans stock tickers, provides buy/sell recommendations using TradingView data, and includes neural network price predictions.
-                        </div>
-                        <ul class="project-features">
-                            <li>AI-powered price direction predictions (UP/DOWN)</li>
-                            <li>Technical indicators (RSI, MACD, Bollinger Bands)</li>
-                            <li>Real-time TradingView charts integration</li>
-                            <li>Paper trading with full trade logging</li>
-                        </ul>
-                        <div class="tags">
-                            <span class="tag">FastAPI</span>
-                            <span class="tag">React</span>
-                            <span class="tag">scikit-learn</span>
-                            <span class="tag">yfinance</span>
-                            <span class="tag">SQLite</span>
-                            <span class="tag">Vite</span>
-                        </div>
-                    </div>
+        <li>
+          <h3>Talk Board</h3>
+          <p class="role">AAC for nonspeaking children</p>
+          <p>
+            Tap a picture, hear the word. When no computer voice exists for a dialect — Sudanese and Juba Arabic,
+            for example — caregivers record a real human voice instead. Long-press opens the caregiver settings path
+            so a child cannot wander out of the board.
+          </p>
+          <p class="stack">Vanilla ES-module PWA · Supabase (accounts, community words, audio) · Capacitor 8 wrappers</p>
+          <p class="links">
+            <a href="https://housegames.club/amoory/">/amoory/</a> ·
+            <a href="https://github.com/Testy911cody/amoory-app">public source</a>
+          </p>
+        </li>
 
-                    <div class="project-card">
-                        <div class="project-title">TradingView to Webull Trading Bot</div>
-                        <div class="project-desc">
-                            Automated trading bot that connects TradingView alerts to Webull paper trading accounts. Executes trades automatically based on webhook signals.
-                        </div>
-                        <ul class="project-features">
-                            <li>Webhook integration with TradingView</li>
-                            <li>Automated order execution on Webull</li>
-                            <li>Market, limit, and stop loss orders</li>
-                            <li>Paper trading support</li>
-                        </ul>
-                        <div class="tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Flask</span>
-                            <span class="tag">Webull API</span>
-                            <span class="tag">Webhooks</span>
-                            <span class="tag">TradingView</span>
-                        </div>
-                    </div>
+        <li>
+          <h3>GoFleet</h3>
+          <p class="role">Ride booking + dispatch</p>
+          <p>
+            Book a taxi, limo, or truck with a fare estimate and trip tracking. The booking UI is an Expo web
+            export served from the same domain; the API runs as Cloudflare Pages Functions.
+          </p>
+          <p class="stack">Expo 52 · React Native 0.76 · React Native Web · Hono on Cloudflare Pages Functions</p>
+          <p class="links">
+            <a href="https://housegames.club/gofleet/book">/gofleet/book</a> ·
+            <a href="https://housegames.club/api/gofleet/health">API health</a>
+          </p>
+        </li>
 
-                    <div class="project-card">
-                        <div class="project-title">Discord Trading Bot</div>
-                        <div class="project-desc">
-                            Sophisticated Discord bot that executes stock trades on Webull by reading natural language messages. Features a beautiful desktop dashboard with real-time monitoring.
-                        </div>
-                        <ul class="project-features">
-                            <li>Natural language message parsing</li>
-                            <li>Beautiful desktop GUI dashboard</li>
-                            <li>Multiple order types (Market, Limit, Stop Loss)</li>
-                            <li>Position tracking & portfolio management</li>
-                            <li>Security controls & user restrictions</li>
-                        </ul>
-                        <div class="tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Discord.py</span>
-                            <span class="tag">Tkinter</span>
-                            <span class="tag">Webull API</span>
-                            <span class="tag">NLP</span>
-                        </div>
-                    </div>
+        <li>
+          <h3>PityParty</h3>
+          <p class="role">Supportive voice rooms</p>
+          <p>
+            &ldquo;Campfires&rdquo; you join from a shared link — no signup, no profile to build first. Designed so the
+            slowest step between feeling bad and talking to someone is opening a link.
+          </p>
+          <p class="stack">Expo 52 · Expo Router · web export into House Games · real-time voice on the web</p>
+          <p class="links"><a href="https://housegames.club/pityparty/">/pityparty/</a></p>
+        </li>
 
-                    <div class="project-card">
-                        <div class="project-title">PityParty - Voice Chat App</div>
-                        <div class="project-desc">
-                            Real-time voice chat application where users create and join rooms to share stories and connect. Features WebRTC for voice communication and Firebase for signaling.
-                        </div>
-                        <ul class="project-features">
-                            <li>Real-time voice communication (WebRTC)</li>
-                            <li>Room categorization (Anxiety, Depression, Grief, etc.)</li>
-                            <li>Firebase Realtime Database integration</li>
-                            <li>Cross-platform (Android, iOS, Web)</li>
-                            <li>Anonymous authentication</li>
-                        </ul>
-                        <div class="tags">
-                            <span class="tag">React Native</span>
-                            <span class="tag">Expo</span>
-                            <span class="tag">WebRTC</span>
-                            <span class="tag">Firebase</span>
-                            <span class="tag">Agora SDK</span>
-                        </div>
-                    </div>
+        <li>
+          <h3>Mychillplace</h3>
+          <p class="role">Retro social portal</p>
+          <p>
+            Profiles, top friends, bulletins, and a profile song — the early-2000s social web, rebuilt on a
+            modern stack and shipped inside House Games.
+          </p>
+          <p class="stack">Vite · React 18 · React Router · Supabase</p>
+          <p class="links"><a href="https://housegames.club/mychillplace/">/mychillplace/</a></p>
+        </li>
 
-                    <div class="project-card">
-                        <div class="project-title">Uber Networking App</div>
-                        <div class="project-desc">
-                            Modern web application connecting people going to the same events (concerts, conferences, sports) so they can share rides and network together.
-                        </div>
-                        <ul class="project-features">
-                            <li>Event discovery & smart matching</li>
-                            <li>Ride sharing coordination</li>
-                            <li>User profiles with ratings</li>
-                            <li>Match management system</li>
-                        </ul>
-                        <div class="tags">
-                            <span class="tag">React 18</span>
-                            <span class="tag">TypeScript</span>
-                            <span class="tag">Vite</span>
-                            <span class="tag">Tailwind CSS</span>
-                            <span class="tag">React Router</span>
-                        </div>
-                    </div>
+        <li>
+          <h3>Women &harr; Men Translator</h3>
+          <p class="role">Voice-first phrase interpreter</p>
+          <p>
+            Type or speak a line and see how it may land on the other side of a conversation, plus a warmer way
+            to say the same thing. Ships as a route inside the House Games app rather than a separate SPA.
+          </p>
+          <p class="stack">In-repo House Games app route · React · TypeScript</p>
+          <p class="links"><a href="https://housegames.club/apps/women-men-translator">/apps/women-men-translator</a></p>
+        </li>
+      </ul>
+    </section>
 
-                    <div class="project-card">
-                        <div class="project-title">Neon Maze Game</div>
-                        <div class="project-desc">
-                            Retro-style HTML5 canvas game featuring a neon-themed maze with death tracking, timer, and immersive cyberpunk aesthetics.
-                        </div>
-                        <ul class="project-features">
-                            <li>HTML5 Canvas game engine</li>
-                            <li>Neon cyberpunk aesthetic</li>
-                            <li>Death tracking & timer system</li>
-                            <li>Responsive game mechanics</li>
-                        </ul>
-                        <div class="tags">
-                            <span class="tag">HTML5</span>
-                            <span class="tag">Canvas API</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">CSS3</span>
-                        </div>
-                    </div>
+    <section>
+      <h2>How this is actually built</h2>
+      <div class="notes">
+        <p>
+          <strong>One domain, two kinds of app.</strong> <code>/games</code> is the multiplayer arcade rendered by
+          Next.js. <code>/apps</code> is a catalog of standalone tools — several of them are separate codebases
+          exported to static files and served from the same origin. That keeps one domain, one deploy, and no
+          cross-origin auth juggling.
+        </p>
+        <p>
+          <strong>Deploys are opt-in.</strong> GitHub Actions runs QA on pushes, but the production Cloudflare
+          upload only fires on an explicit <code>[deploy]</code> marker or a manual workflow dispatch. Cheap
+          feedback on every commit; releases stay deliberate.
+        </p>
+        <p>
+          <strong>Guest-first.</strong> House Games rooms and PityParty campfires both work without an account.
+          Sign-in adds persistence, it is not a gate at the front door.
+        </p>
+      </div>
+    </section>
 
-                    <div class="project-card">
-                        <div class="project-title">Calculator Application</div>
-                        <div class="project-desc">
-                            Feature-rich calculator with graphical user interface. Includes basic arithmetic, advanced operations (square root, percentage, inverse), and memory functions.
-                        </div>
-                        <ul class="project-features">
-                            <li>Basic & advanced arithmetic operations</li>
-                            <li>Memory functions (clear, backspace, etc.)</li>
-                            <li>Modern GUI with Tkinter</li>
-                            <li>Comprehensive error handling</li>
-                        </ul>
-                        <div class="tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Tkinter</span>
-                            <span class="tag">GUI</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section>
+      <h2>Stack I use for real</h2>
+      <ul class="tags">
+        <li>TypeScript</li>
+        <li>React</li>
+        <li>Next.js</li>
+        <li>Expo / React Native Web</li>
+        <li>Tailwind CSS</li>
+        <li>Supabase</li>
+        <li>Cloudflare Pages</li>
+        <li>Pages Functions / Hono</li>
+        <li>Node + Express</li>
+        <li>PWA / service workers</li>
+        <li>GitHub Actions</li>
+      </ul>
+      <p class="muted-note">I do not list private repositories as &ldquo;open source.&rdquo; Where the source is public, the link is above.</p>
+    </section>
 
-            <div class="section-card">
-                <div class="section-title">
-                    <span class="icon">🛠️</span>
-                    Tech Stack
-                </div>
-                <div class="section-subtitle">Technologies and tools I've used across my projects</div>
-                <div class="tags" style="margin-top: 12px;">
-                    <span class="tag">Python</span>
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">TypeScript</span>
-                    <span class="tag">React</span>
-                    <span class="tag">React Native</span>
-                    <span class="tag">Next.js</span>
-                    <span class="tag">Node.js</span>
-                    <span class="tag">FastAPI</span>
-                    <span class="tag">Flask</span>
-                    <span class="tag">Firebase</span>
-                    <span class="tag">SQLite</span>
-                    <span class="tag">WebRTC</span>
-                    <span class="tag">WebSockets</span>
-                    <span class="tag">Tailwind CSS</span>
-                    <span class="tag">Vite</span>
-                    <span class="tag">Expo</span>
-                    <span class="tag">Selenium</span>
-                    <span class="tag">scikit-learn</span>
-                    <span class="tag">Tkinter</span>
-                    <span class="tag">OAuth</span>
-                    <span class="tag">REST APIs</span>
-                    <span class="tag">Webhooks</span>
-                    <span class="tag">TradingView API</span>
-                    <span class="tag">Webull API</span>
-                    <span class="tag">Discord.py</span>
-                    <span class="tag">HTML5 Canvas</span>
-                    <span class="tag">GitHub Pages</span>
-                    <span class="tag">Agentic Coding</span>
-                </div>
-            </div>
+    <section>
+      <h2>Contact</h2>
+      <p>
+        LinkedIn: <a href="https://linkedin.com/in/labi-roman">labi-roman</a> ·
+        GitHub: <a href="https://github.com/Testy911cody">Testy911cody</a> ·
+        Public source: <a href="https://github.com/Testy911cody/amoory-app">amoory-app</a> (Talk Board)
+      </p>
+    </section>
+  </main>
 
-            <div class="section-card contact-section">
-                <div class="section-title">
-                    <span class="icon">📬</span>
-                    Contact
-                </div>
-                <div class="section-subtitle">Let's connect!</div>
-                <div class="contact-links">
-                    <a href="mailto:your-email@example.com" class="contact-link">📧 Email</a>
-                    <a href="https://linkedin.com/in/your-profile" class="contact-link" target="_blank">💼 LinkedIn</a>
-                    <a href="https://github.com/Testy911cody" class="contact-link" target="_blank">🐙 GitHub</a>
-                </div>
-            </div>
-        </div>
-    </div>
+  <footer class="wrap">
+    <p>Static page — no build step, no tracking, no analytics.</p>
+  </footer>
 </body>
 </html>
