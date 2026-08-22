@@ -1,14 +1,19 @@
 # RomanProjects
 
-Public portfolio site for work shipped on [housegames.club](https://housegames.club).
+Static portfolio for Labi Roman.
 
-**Live:** [https://testy911cody.github.io/RomanProjects/](https://testy911cody.github.io/RomanProjects/)
+**Live (GitHub Pages):** [https://testy911cody.github.io/RomanProjects/](https://testy911cody.github.io/RomanProjects/)
 
-The House Games product repo is private, so this page links the running apps rather than a clone command. Talk Board source is public: [amoory-app](https://github.com/Testy911cody/amoory-app).
+Source: `index.html` + `styles.css` only. Deploy from `main` at repository root.
 
-Static files only (`index.html`, `styles.css`) — GitHub Pages from `main` at `/`.
+## Cards
+
+- **Talk Board** — public AAC PWA ([amoory-app](https://github.com/Testy911cody/amoory-app), live [housegames.club/amoory/](https://housegames.club/amoory/))
+- **GoFleet Dispatch** — private Expo + Express/TS; booking UI link only
+- **Agent tooling** — private HITL drafts; not a public LLM product
 
 ## Contact
 
-- LinkedIn: [linkedin.com/in/labi-roman](https://linkedin.com/in/labi-roman)
-- GitHub: [github.com/Testy911cody](https://github.com/Testy911cody)
+[linkedin.com/in/labi-roman](https://www.linkedin.com/in/labi-roman)
+
+Planned GitHub username: `roman` when available (see Career-Hub `GITHUB_RENAME.md`). Until then: [github.com/Testy911cody](https://github.com/Testy911cody).
