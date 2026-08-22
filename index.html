@@ -3,76 +3,216 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Labi Roman</title>
-  <meta name="description" content="Labi Roman — Talk Board (public), GoFleet Dispatch and other commercial work (private)." />
-  <meta name="color-scheme" content="dark" />
+  <title>Labi Roman — full-stack product builder</title>
+  <meta name="description" content="Labi Roman: full-stack product builder. Live work on housegames.club — Talk Board AAC, House Games, GoFleet booking UI, PityParty, Mychillplace." />
+  <meta name="color-scheme" content="light" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <a class="skip" href="#work">Skip to work</a>
 
-  <header class="site-header wrap">
-    <p class="brand">Labi Roman</p>
-    <nav aria-label="Primary">
+  <div class="atmosphere" aria-hidden="true">
+    <div class="atmosphere__wash"></div>
+    <div class="atmosphere__grain"></div>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Primary">
       <a href="https://www.linkedin.com/in/labi-roman">LinkedIn</a>
-      <a href="https://github.com/Testy911cody">GitHub</a>
+      <a href="https://github.com/Romans-Builds">GitHub</a>
+      <a href="https://housegames.club">housegames.club</a>
     </nav>
   </header>
 
   <section class="hero wrap">
-    <h1>Selected work</h1>
+    <p class="name">Labi Roman</p>
+    <p class="role-line">Full-stack product builder</p>
     <p class="lede">
-      Based in Dammam; US citizen. TypeScript, Node, and Expo products.
-      Public source for Talk Board; commercial projects stay private.
+      TypeScript and JavaScript on a Next.js site hosted on Cloudflare — with a public AAC PWA
+      and a booking UI you can open today.
     </p>
+    <div class="cta">
+      <a class="btn" href="https://housegames.club/amoory/">Open Talk Board</a>
+      <a class="btn ghost" href="https://housegames.club">House Games</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/labi-roman">LinkedIn</a>
+    </div>
   </section>
 
-  <main id="work" class="wrap cards">
-    <article class="card">
-      <p class="card-kicker">Public</p>
-      <h2>Talk Board</h2>
-      <p>
-        Picture-and-voice AAC PWA: tap cards, hear TTS or community-recorded dialect audio.
-        Vanilla ES modules, offline queues, Supabase when signed in. Capacitor wrappers for packaging.
+  <main class="wrap">
+    <section id="work" class="work">
+      <h2>Selected work</h2>
+      <p class="section-lede">
+        Live URLs below. The House Games repo is private; Talk Board is the public product source
+        (<a href="https://github.com/Romans-Builds/amoory-app">amoory-app</a>).
       </p>
-      <p class="card-links">
-        <a href="https://housegames.club/amoory/">Live demo</a>
-        <a href="https://github.com/Testy911cody/amoory-app">Source</a>
-      </p>
-    </article>
 
-    <article class="card">
-      <p class="card-kicker">Private</p>
-      <h2>GoFleet Dispatch</h2>
-      <p>
-        Expo + Express/TypeScript dispatch and booking (taxi / limo / truck modules).
-        Repo is private. Booking UI is live on the same domain as House Games.
-      </p>
-      <p class="card-links">
-        <a href="https://housegames.club/gofleet/book">Booking UI</a>
-      </p>
-    </article>
+      <ol class="work-list">
+        <li class="work-item">
+          <div class="work-meta">
+            <span class="work-index" aria-hidden="true">01</span>
+            <h3>Talk Board</h3>
+            <p class="work-tag">AAC PWA · live + public source</p>
+          </div>
+          <div class="work-body">
+            <p>
+              Picture-and-voice AAC: tap cards, speak via TTS or recorded audio. Caregivers can
+              record dialect voices — including Sudanese and Juba Arabic when computer TTS is missing.
+              Vanilla ES-module PWA; same Supabase project as House Games. Capacitor wrappers exist
+              for packaging; not listed on app stores.
+            </p>
+            <p class="work-links">
+              <a href="https://housegames.club/amoory/">housegames.club/amoory/</a>
+              <span class="sep" aria-hidden="true">·</span>
+              <a href="https://github.com/Romans-Builds/amoory-app">Source</a>
+            </p>
+          </div>
+        </li>
 
-    <article class="card">
-      <p class="card-kicker">Private</p>
-      <h2>Agent tooling</h2>
-      <p>
-        Local discovery and draft pipeline with human approval gates before actions leave the queue.
-        Not published as a standalone LLM product.
+        <li class="work-item">
+          <div class="work-meta">
+            <span class="work-index" aria-hidden="true">02</span>
+            <h3>House Games</h3>
+            <p class="work-tag">Live site · private repo</p>
+          </div>
+          <div class="work-body">
+            <p>
+              Next.js PWA that hosts party games and embedded web apps on one domain (Cloudflare Pages).
+              Guest play without an account for arcade rooms; production deploys are opt-in, not every
+              git push. Stack in repo: React, TypeScript, Tailwind, Supabase. The live URL is the
+              public artifact.
+            </p>
+            <p class="work-links">
+              <a href="https://housegames.club">housegames.club</a>
+            </p>
+          </div>
+        </li>
+
+        <li class="work-item">
+          <div class="work-meta">
+            <span class="work-index" aria-hidden="true">03</span>
+            <h3>GoFleet</h3>
+            <p class="work-tag">Booking UI + API health</p>
+          </div>
+          <div class="work-body">
+            <p>
+              Expo / React Native Web booking UI and a same-origin API (Cloudflare Pages Functions / Hono).
+              Health endpoint returns ok on Cloudflare. Local codebase also includes Express dispatch
+              modules with a JSON file store. Not a live US fleet operation, native store app, payments
+              product, or GPS tracker.
+            </p>
+            <p class="work-links">
+              <a href="https://housegames.club/gofleet/book/">/gofleet/book/</a>
+              <span class="sep" aria-hidden="true">·</span>
+              <a href="https://housegames.club/api/gofleet/health">API health</a>
+            </p>
+          </div>
+        </li>
+
+        <li class="work-item">
+          <div class="work-meta">
+            <span class="work-index" aria-hidden="true">04</span>
+            <h3>PityParty</h3>
+            <p class="work-tag">Voice rooms · live</p>
+          </div>
+          <div class="work-body">
+            <p>
+              Supportive voice rooms you join from a shared link — no account required.
+              Web export into House Games; real-time voice on the web.
+            </p>
+            <p class="work-links">
+              <a href="https://housegames.club/pityparty/">/pityparty/</a>
+            </p>
+          </div>
+        </li>
+
+        <li class="work-item">
+          <div class="work-meta">
+            <span class="work-index" aria-hidden="true">05</span>
+            <h3>Mychillplace</h3>
+            <p class="work-tag">Retro social · live SPA</p>
+          </div>
+          <div class="work-body">
+            <p>
+              Profiles, top friends, bulletins, and a profile song — a Vite / React SPA shipped
+              inside House Games.
+            </p>
+            <p class="work-links">
+              <a href="https://housegames.club/mychillplace/">/mychillplace/</a>
+            </p>
+          </div>
+        </li>
+      </ol>
+
+      <p class="catalog-note">
+        Full apps catalog (including smaller demos):
+        <a href="https://housegames.club/apps/">housegames.club/apps</a>
       </p>
-    </article>
+    </section>
+
+    <section class="approach">
+      <h2>How it is built</h2>
+      <ul class="approach-list">
+        <li>
+          <strong>One domain, two kinds of app.</strong>
+          <code>/games</code> is the Next.js arcade;
+          <code>/apps</code> are separate codebases exported to static files on the same origin.
+        </li>
+        <li>
+          <strong>Opt-in production deploys.</strong>
+          CI runs QA on pushes; Cloudflare upload only on an explicit marker or manual dispatch.
+        </li>
+        <li>
+          <strong>Guest-first where it fits.</strong>
+          Arcade rooms and PityParty work without an account; sign-in adds persistence.
+        </li>
+        <li>
+          <strong>Accessibility that fits the user.</strong>
+          Talk Board exists because commercial AAC has no voice for Sudanese and Juba Arabic;
+          community-recorded audio fills the gap TTS cannot.
+        </li>
+      </ul>
+    </section>
+
+    <section class="stack">
+      <h2>Stack</h2>
+      <p class="stack-line">
+        TypeScript · React · Next.js · Expo / React Native Web · Tailwind CSS · Supabase ·
+        Cloudflare Pages · Pages Functions / Hono · Node + Express · PWA · GitHub Actions
+      </p>
+      <p class="honest">
+        Private repositories are not listed as open source. Where source is public, the link is above.
+      </p>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Contact</h2>
+      <ul class="contact-list">
+        <li>
+          <span class="label">LinkedIn</span>
+          <a href="https://www.linkedin.com/in/labi-roman">linkedin.com/in/labi-roman</a>
+        </li>
+        <li>
+          <span class="label">GitHub</span>
+          <a href="https://github.com/Romans-Builds">github.com/Romans-Builds</a>
+        </li>
+        <li>
+          <span class="label">Live products</span>
+          <a href="https://housegames.club">housegames.club</a>
+        </li>
+        <li>
+          <span class="label">Public source</span>
+          <a href="https://github.com/Romans-Builds/amoory-app">amoory-app</a>
+          <span class="hint">(Talk Board)</span>
+        </li>
+      </ul>
+    </section>
   </main>
 
   <footer class="site-footer wrap">
-    <p>
-      Reach me on
-      <a href="https://www.linkedin.com/in/labi-roman">LinkedIn</a>.
-      GitHub username planned rename to <code>roman</code> when available
-      (today: <a href="https://github.com/Testy911cody">Testy911cody</a>).
-    </p>
+    <p>Static portfolio — no build step, no tracking.</p>
   </footer>
 </body>
 </html>
